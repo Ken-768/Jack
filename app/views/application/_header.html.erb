@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/home/top">Lit</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <% if user_signed_in? %>
+      <%= header_link_item('Mypage', user_path(id: current_user.id)) %>
+      <% else %>
+      <%= header_link_item('home', root_path) %>
+      <% end %>
+      <%= header_link_item('Search', articles_search_path) %>
+      <%= header_link_item('Posts', new_article_path) %>
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, method: :get, class: "nav-link" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
+<% if flash[:info] %>
+  <p class="flash-notice"><i class="fas fa-check-square"></i> <%= flash[:info] %></p>
+  <% end %>
+  <script>
+  $(function(){
+  setTimeout("$('.flash-notice').fadeOut('slow')", 2000) 
+})
+
+</script>

@@ -1,0 +1,54 @@
+<div class="edit-user">
+  <h1 class="edit-user-header">Edit User</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="imagename-edit">
+  <%= f.label :image %><br/>
+  <%= f.file_field :imagename %>
+ </div>
+
+  <div class="edit-container">
+    <%= f.text_area :profile, class: 'profile', value: 'write about yourself' %>
+
+  <div class="email-edit">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="password-edit">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="password-confirmation-edit">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="current_password-edit">
+    <%= f.label :current_password %><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+  </div>
+
+  <div class="update-edit">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+</div>

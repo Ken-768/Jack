@@ -1,0 +1,68 @@
+
+<%= render 'header' %>
+<div class="d-flex align-items-center mt-4 mb-4">
+    <div class="ml-auto articles_button">
+    <% if user_signed_in? %>
+    <% if @article.user.id == current_user.id %>
+      <div class="article-menus">
+        <a class="btn btn-outline-info" href="/users/show" role="button">マイページ</a>
+        <%= link_to '編集', edit_article_path(@article), class: "btn btn-outline-info" %>
+        <%= link_to("削除", "/articles/:id", {method: "delete", class: "btn btn-outline-info"}) %>
+      </div>
+    <% end %>
+    <% end %>
+    </div>
+</div>
+
+<div class="main articles-show">
+  <div class="container">
+    <div class="articles-show-item">
+    <h1><%= @article.title %></h1>
+    <h3><%= @article.place %></h3>
+      <p>
+        <%= simple_format (@article.content), :class=>"articles-content" %>
+      </p>
+      <div class="article-time">
+        <%= @article.created_at %>
+      </div>
+
+      <div class="like-box">
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(@article) %>
+          <%= link_to article_like_path(@article), {method: "delete"} do %>
+          <span class="fa fa-heart like-btn-unlike"><%= @article.likes.count %></span>
+          <% end %>
+          <% @article.liked_users.each do |user| %>
+            <p><%= user.name %></p>
+            <% end %>
+          
+          
+      <% else %>
+          <%= link_to article_likes_path(@article), {method: "post"} do %>
+          <span class="fa fa-heart like-btn-like"><%= @article.likes.count %></span>
+          <% end %>
+          <% @article.liked_users.each do |user| %>
+            <p><%= user.name %></p>
+            <% end %>
+        <% end %>
+      <% end %>
+      </div>
+
+    <% @comments.each do |c| %>
+      <div>
+        <a href="/users/<%= c.user.id %>"><%= c.user.name %></a>
+        <%= c.content %>
+        <hr>
+      </div>
+    <% end %>
+
+<%= form_for [@article, @comment] do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit 'コメントする' %>
+<% end %>
+
+
+
+
+
+      

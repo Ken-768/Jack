@@ -1,0 +1,47 @@
+<%= render 'header' %>
+<div class="d-flex align-items-center">
+  <h1>編集</h1>
+  <div class="ml-auto articles_button">
+      <%= link_to '投稿一覧', articles_path, class: 'btn btn-outline-info' %>
+  </div>
+</div>
+<%= form_for @article do |f| %>
+    <div class="form-group">
+        <%= f.label :name, '投稿者名' %>
+        <%= f.text_field :name, class: 'form-control' %>
+        <small id="poster-tip" class="form-text text-muted">
+            あなたの名前を入力してください。
+        </small>
+    </div>
+    <div class="form-group">
+        <%= f.label :title, '投稿タイトル' %>
+        <%= f.text_field :title, class: 'form-control' %>
+        <small id="title-tip" class="form-text text-muted">
+            タイトルを入力してください。
+        </small>
+         <div class="form-group">
+        <%= f.label :place, '場所' %>
+        <%= f.text_field :place, class: 'form-control' %>
+        <small id="poster-tip" class="form-text text-muted">
+            場所を入力してください。
+        </small>
+    </div>
+    <div class="form-group">
+        <%= f.label :learn, '学んだこと' %>
+        <%= f.text_field :learn, class: 'form-control' %>
+        <small id="poster-tip" class="form-text text-muted">
+            学んだことを入力してください。
+        </small>
+    </div>
+    <div class="form-group">
+        <%= f.label :content, '投稿内容' %>
+        <%= f.text_area :content, class: 'form-control', rows:10 %>
+        <small id=content-tip" class="form-text text-muted">
+            投稿内容を入力してください。 
+        </small>
+    </div>
+    <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
+    <small id="submit-tip" class="form-text text-muted">
+        投稿内容を確認してください。
+    </small>
+<% end %>

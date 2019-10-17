@@ -1,0 +1,93 @@
+<header>
+  <%= render 'header' %>
+
+</header>
+<div class="top-wrapper">
+  <div class="top-container">
+    <h1>Lit</h1>
+    <p>”最高”の留学体験をシェアしよう。</p>
+    <div class="btn-wrapper">
+      <a href="/users/sign_up" class="btn signup">新規登録</a>
+      <a href="https://twitter.com/ken_768" class="btn twitter"><i class="fab fa-twitter"></i>Twitterで登録</a>
+    </div>
+  </div>
+</div>
+
+<div class="about-wrapper">
+  <div class="about-container">
+    <div class="about1">
+      <h1>What's your story?</h1>
+      <p>新たな文化、様々な人との出会い、思い出の場所をLitに記録しよう。</p>
+    </div>
+    <div class="about2">
+      <h1>About Lit</h1>
+      <p>Litはカナダ留学専用の日記投稿サービスです。
+      <br>留学には様々な情報が必要になります。実際に留学をした方の経験談ほど濃い情報はないでしょう。
+      <br>Litを使って”最高”の思い出を記録し、次に留学する人の道を”照らす”サービスとなることを願っています。</p>
+    </div>
+  </div>
+</div>
+<div class="detail-wrapper">
+  <div class="detail-container">
+    <div class="detail1">
+      <div class="image-box1">
+      <img class="box-image1" src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    </div>
+    <div>
+      <h2>思い出を記録する</h2>
+      <p>楽しかった場所や友達との思い出を写真と文章でみんなに伝えよう。</p>
+    </div>
+    </div>
+    <div class="detail2">
+      <div class="img-box2">
+        <img class="box-image2" src="https://images.unsplash.com/photo-1548585742-de182e9e9378?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1039&q=80">
+      </div>
+      <div>
+        <h2>現地の情報を知る</h2>
+        <p>既に留学を経験している先輩達の<br>生の声を聞いて充実した留学生活を送ろう。</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="footer-wrapper">
+  <div class="footer-container">
+    <h4 class="ask">お問い合わせはこちら</h4>
+    <p>twitter: @ken_768
+      <br>email: example.1@email.com</p>
+  </div>
+</div>
+
+<script>
+jQuery(function(){
+  
+  $('.top-wrapper').hide().fadeIn(1500);
+  $('.top-container').hide().fadeIn(3500);
+
+});
+
+$(function(){
+  
+  $(window).scroll(function(){
+    let scroll = $(window).scrollTop();
+    if(scroll > 750){
+      $('.footer-wrapper').css("opacity","1");
+    }else if(scroll > 550){
+      $('.detail-wrapper, .detail-container').fadeIn(2000);
+    }else if(scroll > 100){
+      $('.about-wrapper, .about-container').fadeIn(2000);
+    }else{
+      $('.about-wrapper, .about-container').hide();
+      $('.detail-wrapper, .detail-container').hide();
+      $('.footer-wrapper').css("opacity","0");
+    }
+      
+
+  });
+
+});
+
+
+
+</script>
+

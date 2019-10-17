@@ -1,0 +1,94 @@
+ <%= render 'header' %>
+ <div class="background-image">
+ <div class="d-flex align-items-center">
+    
+</div>
+
+  <div class="user-wrap">
+    <div class="image-current-user"><%= image_tag @user.imagename.to_s, class: "image" %></div>
+    <div class="user-box">
+      <h3 class="username"><%=  @user.name %></h3>
+      <div class="posts_button">
+        <a class="setting" href="/users/edit">設定</a>
+        <a class="toukou" href="/articles/new">投稿</a>
+      </div>
+    </div>
+  </div>
+
+
+<ul class="tabnav">
+    <li><a href="#tab01">プロフィール</a></li>
+    <li><a href="#tab02">記事一覧</a></li>
+    <li><a href="#tab03">いいね</a></li>
+</ul>
+</div>
+<div class="tabcontent">
+<div id="tab01">
+<%= @user.profile %>
+</div>
+  <div id="tab02">
+    <table class="table table-bordered border-primary table-hover table-sm posts_table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="background-color: #17a2b8 !important">No.</th>
+          <th scope="col" style="background-color: #17a2b8 !important">投稿タイトル</th>
+          <th scope="col" style="background-color: #17a2b8 !important">場所</th>
+          <th scope="col" style="background-color: #17a2b8 !important">投稿日</th>
+          <th scope="col" style="background-color: #17a2b8 !important"></th>
+        </tr>
+      </thead>
+      <tbody>　
+        <% @articles.each do |a| %>
+          
+          <tr>
+            <td><a href="/articles/<%= a.id %>"><%= a.id %></a></td>
+            <td><%= a.title %></td>
+            <td><%= a.place %></td>
+            <td><%= a.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+            <td class="delete"><%= link_to "削除" , "/articles/#{a.id}", method: :delete %></td>
+          </tr>
+        </div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div id="tab03">
+  <table class="table table-bordered border-primary table-hover table-sm posts_table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="background-color: #17a2b8 !important">No.</th>
+          <th scope="col" style="background-color: #17a2b8 !important">投稿タイトル</th>
+          <th scope="col" style="background-color: #17a2b8 !important">場所</th>
+          <th scope="col" style="background-color: #17a2b8 !important">投稿日</th>
+        </tr>
+      </thead>
+  <tbody>
+  <% @allArticles.each do |a| %>
+  <% if current_user.already_liked?(a) %> 
+      <tr>
+            <td><a href="/articles/<%= a.id %>"><%= a.id %></a></td>
+            <td><%= a.title %></td>
+            <td><%= a.place %></td>
+            <td><%= a.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+          </tr>
+  <% end %>
+<% end %>
+</tbody>
+  </div>
+ 
+  　
+<script>
+jQuery(function($){
+    $('.tabcontent > div').hide();
+ 
+    $('.tabnav a').click(function () {
+        $('.tabcontent > div').hide();
+        $('.tabcontent > div').filter(this.hash).fadeIn();
+ 
+        $('.tabnav a').removeClass('active');
+        $(this).addClass('active');
+ 
+        return false;
+    });
+});
+</script>

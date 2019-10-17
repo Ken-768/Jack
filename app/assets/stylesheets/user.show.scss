@@ -1,0 +1,131 @@
+.background-image{
+    background-image: url("/assets/flyaway.jpeg");
+    background-size: cover;
+}
+
+.user-wrap{
+    margin-top: 5.5%;
+    height: 220px;
+    width: 100%;
+    display: flex;
+.user-box{
+    display: inline-block;
+
+    .posts_button {
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 8%;
+        width: 100%;
+
+        .setting {
+            color: white;
+            background: rgba($color: #6eb7ff, $alpha: 0.4);
+            border-radius: 9px;
+            padding: 10px;
+        }
+
+        .toukou{
+            
+            color: white;
+            background: rgba($color: #6eb7ff, $alpha: 0.4);
+            border-radius: 9px;
+            padding: 10px;
+        }
+    }
+
+    .username{
+        text-align: center;
+        display: inline-block;
+        padding: 15px;
+        color: #FFF;
+        background: rgba($color: #6eb7ff, $alpha: 0.4);
+        border-radius: 9px;
+        font-weight: bold;
+    }
+}
+
+    .image-current-user{
+
+        .image{
+            border: 2px solid black;
+            border-radius: 500px;
+            height: 200px;
+            width: 200px;
+        }
+    }
+}
+
+.tabnav{
+    margin-top: 30px;
+    padding: 0;
+}
+.tabnav li{
+    display: inline;
+}
+.tabnav li a{
+    display: inline-block;
+    background: #405dca;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+}
+.tabnav li a:hover,
+.tabnav li a.active{
+    background: #ddd;
+    color: #333;
+}
+.tabcontent{
+    padding: 20px;
+    border: 1px dotted #ccc;
+}
+
+.flash-notice{
+    color: white;
+    border-radius: 0.3em;
+    background-color: #00FF00;
+}
+
+.box{
+    position: relative;
+}
+
+tr td a{
+    color: black;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    text-decoration: none;
+}
+
+tr td a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.delete a{
+    color: #95ccff;
+}
+
+.delete a:hover{
+    color: blue;
+    text-decoration-line: underline;
+}
+
+h1 {
+    margin: 30px 0;
+}
+
+
+
+.articles-content{
+    overflow-wrap: normal;
+}
+
+
+.like-box{
+    display:flex;
+}

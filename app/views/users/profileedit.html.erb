@@ -1,0 +1,10 @@
+<div class="edit-user">
+  <h1 class="edit-user-header">Edit Profile</h1>
+<div class="imagename-edit">
+  <%= f.label :image %><br/>
+  <%= f.file_field :imagename %>
+ </div>
+
+  <div class="edit-container">
+    <%= f.text_area :profile, class: 'profile', value: 'write about yourself' %>
+</div>    

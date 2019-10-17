@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
+  }
+  
+  .top-container {
+    width: 1170px;
+    height: 850px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  
+   .top-wrapper{
+     background-image: url("../../../assets/friends.jpeg");
+     background-size: cover;
+   }
+  
+   .top-wrapper h1{
+     font-family: 'Caveat', cursive;
+     padding-top: 70px;
+     font-size: 70px;
+   }
+  
+   .top-wrapper p{
+     margin-top: 30px;
+     font-size: 30px;
+   }
+  
+   .btn-wrapper{
+     margin: 20px 0;
+     padding-top: 20px;
+   }
+  
+   .signup{
+     background-color: #66CC99;
+     color: white;
+     margin-right: 12px;
+   }
+  
+   .twitter{
+     background-color: #3399FF;
+     color: white;
+   }
+  
+   i{
+     padding-right: 10px;
+   }
+  
+   .btn{
+    padding: 8px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border-radius: 4px;
+   }
+  
+   .btn:hover{
+     opacity:1;
+     color: white;
+   }
+  
+  header{
+    position: fixed;
+    width: 100%;
+  }
+  
+  .header-left{
+    float:left;
+  }
+  
+  .header-left h3{
+    font-family: 'Caveat', cursive;
+    padding-left: 30px;
+    padding-top: 10px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .header-right{
+    float: right;
+    padding-top: 12px;
+    display: block;
+  }
+  
+  .logo{
+    width: 124px;
+    margin-top: 20px;
+  }
+  
+  .about-container{
+    height: 500px;
+    padding: 80px 0px;
+    background-color: initial;
+    text-align: center;
+  }
+  
+  .about1{
+    color:#808080;
+  }
+  
+  .about2{
+    color:#808080;
+  }
+  
+  .about1 h1{
+    color: red;
+  }
+  
+  .about1 p{
+    margin-top: 20px;
+  }
+  
+  .about2{
+    margin-top: 80px;
+  }
+  
+  .about2 h1{
+    color:#0FF;
+  }
+  
+  .about2 p{
+    margin-top: 20px;
+  }
+  
+  .detail-container{
+    height: 500px;
+    padding: 80px 0px;
+    background-color:#C0C0C0 ;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    color: white;
+  }
+  
+  .detail1{
+    margin-right: 50px;
+    display: flex;
+  }
+  
+  .detail1 .image-box1{
+    width: 50%;
+    height: 70%;
+  }
+  
+  .detail1 h2{
+    padding-top: 30px;
+    margin-right: 30px;
+    padding-left: 20px;
+  }
+  
+  .detail1 p{
+   padding-top: 30px;
+   margin-right: 30px;
+   padding-left: 20px
+  }
+  
+  .box-image1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* float: left; */
+    padding: 30px 0 0 20px;
+  }
+  
+  .box-image2{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* float: left; */
+    padding: 30px 0 0 20px;
+  }
+  
+  .footer-container{
+    text-align: center;
+    background-color: #0092c5!important;
+  }
+  
+  .ask{
+    color: white;
+  }
+  
+  .footer-container p{
+    color: white;
+  }
+  
+  .detail2{
+    margin-left: 50px;
+    display: flex;
+    padding-right: 30px;
+  }
+  
+  .detail2 .img-box2 {
+    width: 50%;
+    height: 70%;
+  
+  }
+  
+  .detail2 h2{
+    padding-top: 30px;
+    margin-left: 30px;
+  }
+  
+  .detail2 p{
+    padding-top: 30px;
+    margin-left: 30px;
+  }
+
+  .aaa{
+    height: 1000px;
+  }

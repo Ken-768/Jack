@@ -1,0 +1,26 @@
+<table class="table table-bordered border-primary table-hover table-sm posts_table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width: 40px">No.</th>
+          <th scope="col" style="width: 700px">投稿タイトル</th>
+          <th scope="col">場所</th>
+          <th scope="col">学んだこと</th>
+          <th scope="col">投稿日</th>
+          <th scope="col">更新日時</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>　
+  <% @likes.each do |like| %>
+      <% article = Article.find_by(id: like.article_id) %>
+      <tr>
+        <th><%= a.id %></th>
+          <td><%= a.title %></td>
+          <td><%= a.place %></td>
+          <td><%= a.learn %></td>
+          <td><%= a.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+          <td><%= a.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+          <td><%= link_to 'もっと見る', "/articles/#{a.id}" %><td>
+      </tr>
